@@ -1,0 +1,157 @@
+Teaching Code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My School Project</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        /* Interactive Elements */
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #announcement {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e8f4fd;
+            border-left: 5px solid #3498db;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">🏫 Global Academy</div>
+        <div>First Web Project</div>
+    </nav>
+
+    <header class="hero">
+        <h1>Welcome to My School</h1>
+        <p>Building the future, one step at a time.</p>
+    </header>
+
+    <div class="container">
+        <section class="card">
+            <h2>About Our School</h2>
+            <p>This website is a project dedicated to my school. Here, we can share news, events, and learning resources with all students and teachers.</p>
+        </section>
+
+        <section class="card">
+            <h2>Daily News</h2>
+            <p>Click the button below to see the latest update for today.</p>
+            <br>
+            <button class="btn" id="newsBtn">Show Latest News</button>
+            
+            <div id="announcement" class="hidden">
+                <strong>📢 Update:</strong> The school library will be open until 6:00 PM this week for exam preparations!
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 My First Web Project. Created by St0x.
+    </footer>
+
+    <script>
+        const newsBtn = document.getElementById('newsBtn');
+        const announcement = document.getElementById('announcement');
+
+newsBtn.addEventListener('click', function() {
+            // Check if it is hidden or showing
+            if (announcement.classList.contains('hidden')) {
+                announcement.classList.remove('hidden');
+                newsBtn.textContent = 'Hide News';
+            } else {
+                announcement.classList.add('hidden');
+                newsBtn.textContent = 'Show Latest News';
+            }
+        });
+    </script>
+
+</body>
+</html>
